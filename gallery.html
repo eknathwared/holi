@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holi Memories 🎨✨</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Holi Memories 🌈🎉</h1>
+        <p>Let's relive our most colorful and joyful moments together! 💖✨</p>
+
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item" style="--i:0"><img src="photo1.jpg" alt="Throwing colors together"></div>
+                <div class="carousel-item" style="--i:1"><img src="photo2.jpg" alt="Holi dance and fun"></div>
+                <div class="carousel-item" style="--i:2"><img src="photo3.jpg" alt="Gulaal explosion moment"></div>
+            </div>
+            <button class="prev" onclick="rotateCarousel(-1)">❮</button>
+            <button class="next" onclick="rotateCarousel(1)">❯</button>
+        </div>
+    </div>
+
+    <script>
+        let angle = 0;
+        const carousel = document.querySelector(".carousel");
+        const totalItems = document.querySelectorAll(".carousel-item").length;
+        const angleStep = 360 / totalItems + 1;
+
+        function rotateCarousel(direction) {
+            angle += direction * angleStep;
+            carousel.style.transform = `rotateY(${angle}deg)`;
+        }
+
+        setInterval(() => rotateCarousel(1), 1000); // Auto-rotate every 2s
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why You're My Best Friend! 🎨💖</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Why You're My Best Friend! ❤️🌈</h1>
+
+        <div class="reasons">
+            <div class="reason hidden">🎨 Holi ke rang jaise, tu bhi mere life ka ek bright color hai! 🌈</div>
+            <div class="reason hidden">😆 Holi pe bhi planning ki zaroorat nahi, bas rang udao & enjoy! 😂</div>
+            <div class="reason hidden">💃 Holi ke beats pe jo dance karte hain, unki dosti hamesha solid hoti hai! 🎵🔥</div>
+            <div class="reason hidden">🌟 Tu meri life ka gulaal hai, jo hamesha bright vibes deta hai! 💖</div>
+        </div>
+
+        <button id="revealBtn">Next Colorful Memory 🌟</button>
+    </div>
+
+    <script>
+        let index = 0;
+        const reasons = document.querySelectorAll('.reason');
+        document.getElementById("revealBtn").addEventListener("click", function() {
+            if (index < reasons.length) {
+                reasons[index].classList.add("show");
+                index++;
+            } else {
+                window.location.href = "gallery.html"; // Redirect to Gallery Page
+            }
+        });
+    </script>
+</body>
+</html>
